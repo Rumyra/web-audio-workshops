@@ -10,3 +10,10 @@
   - Demonstration
   - Class exercise
 - Lesson Two
+  - How digital audio works
+  - Buffers
+  - Loading in files
+  - context.currentTime
+- Lesson Three
+  - Oscillators
+  - Built in methods for nodes

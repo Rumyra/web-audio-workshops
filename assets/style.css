@@ -42,4 +42,17 @@ button[data-sound="hh"] {
     hsla(190,45%,50%,1));
   border-color: hsla(190,45%,50%,1);
 }
-
+button[data-sound="laser"] {
+  background-color:hsla(70,45%,40%,1);
+  background-image: linear-gradient(0deg,
+    hsla(70,45%,45%,1),
+    hsla(70,45%,50%,1));
+  border-color: hsla(70,45%,50%,1);
+}
+button[data-sound="snare"] {
+  background-color:hsla(230,45%,40%,1);
+  background-image: linear-gradient(0deg,
+    hsla(230,45%,45%,1),
+    hsla(230,45%,50%,1));
+  border-color: hsla(230,45%,50%,1);
+}

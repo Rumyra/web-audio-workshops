@@ -29,20 +29,15 @@ Create skeleton file for each lesson with comments & create finished file for ea
 
 
 
-### Lesson 2
-
-How digital audio works
-Buffers
-Loading a sound from a file into a buffer
-Timing - hi hat
-
-
 
 
 ### Lesson 3
 
 Making sounds with the api
 Oscillascope - laser
+
+### Lesson 4
+
 Buffer - biquad filter
 Adding effects
 
