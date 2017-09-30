@@ -37,26 +37,38 @@ function playSnare() {
 
   // set up params for our buffer
   // frame count
+  const snareBufferSize = context.sampleRate;
 
   // create our buffer - pass in channels, frame count, sample rate
+  const snareBuffer = context.createBuffer(1, snareBufferSize, context.sampleRate);
 
   // create a buffer source node
+  const snare = context.createBufferSource();
 
 
   // get existing data (array of zeros)
+  var snareData = snareBuffer.getChannelData(0);
 
   // create random numbers & pop them in
+  for (let i=0; i<snareBufferSize; i++) {
+    snareData[i] = Math.random()*2 - 1;
+  }
 
   // pass generated data into buffer
+  snare.buffer = snareBuffer;
 
 
   // create a filter
+  const snareFilter = context.createBiquadFilter();
 
   // set filter type - find different types
+  snareFilter.type = "bandpass";
 
   // set frequency to filter (kinda irrelevant with a bandpass but 🤷🏻‍♀️)
+  snareFilter.frequency = 10000;
 
   // set the Q
+  snareFilter.Q = 0.0001;
 
 
   // create a gain node for effect

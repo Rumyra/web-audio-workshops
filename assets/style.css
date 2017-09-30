@@ -56,3 +56,27 @@ button[data-sound="snare"] {
     hsla(230,45%,50%,1));
   border-color: hsla(230,45%,50%,1);
 }
+
+/*space*/
+/*spacialised sound ~~~~~~~~~~~~~~~~~*/
+#space {
+  width:50%; height:40vh; margin:0px auto 100px;
+  border:2px solid grey;
+  background:hsla(270, 10%, 30%, 0.5);
+}
+
+#space span {
+  display: block; margin:0px auto;
+  width: 80px; height: 80px;
+  border:6px solid hsla(230,45%,50%,1);
+  border-radius: 50%;
+}
+
+#space span[data-object="source"] {
+  background-color: hsla(230,45%,45%,1);
+  border-color: hsla(230,45%,50%,1);
+}
+#space span[data-object="listener"] {
+  background-color: hsla(0,45%,45%,1);
+  border-color: hsla(0,45%,50%,1);
+}

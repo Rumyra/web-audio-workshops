@@ -29,35 +29,11 @@ Create skeleton file for each lesson with comments & create finished file for ea
 
 
 
-
-
-### Lesson 3
-
-Making sounds with the api
-Oscillascope - laser
-
-### Lesson 4
-
-Buffer - biquad filter
-Adding effects
-
-
-### Lesson 4
-
-Adding spacialisation
-
-### Lesson 5
-
-MIDI!
-
-
-
-
 Other lessons for future workshops
 
-Creating your own wave
-Convolver, panning, other nodes
-Streaming audio
-Analysing
-Visuals
-MIDI
+- Creating your own wave
+- Convolver, panning, other nodes
+- Streaming audio
+- Analysing
+- Visuals
+- MIDI
