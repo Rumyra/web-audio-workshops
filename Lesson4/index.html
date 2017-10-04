@@ -33,7 +33,7 @@ const snareButton = document.querySelector('button[data-sound="snare"]');
 const context = new window.AudioContext;
 
 // create a play snare function
-function playSnare() {
+function playSnare(time) {
 
   // set up params for our buffer
   // frame count
@@ -79,7 +79,7 @@ function playSnare() {
 
 snareButton.addEventListener('click', function(evt) {
   // play snare
-  playSnare();
+  playSnare(context.currentTime);
 });
 
 

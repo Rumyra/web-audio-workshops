@@ -28,8 +28,11 @@
 
 // declare stuff for use later on
 const laserButton = document.querySelector('button[data-sound="laser"]'),
+  arpsButton = document.querySelector('button[data-sound="arps"]'),
   snareButton = document.querySelector('button[data-sound="snare"]'),
   hiHatButton = document.querySelector('button[data-sound="hh"]');
+
+var data, midi;
 
 // audio stuff starts here
 
@@ -41,6 +44,43 @@ const context = new window.AudioContext;
 // you have all the functions to play sound all the sounds when buttons are pressed - put them here!
 
 // MIDI stuff
+
+// test for MIDI support
+if (navigator.requestMIDIAccess) {
+
+  navigator.requestMIDIAccess({
+      sysex: false
+  }).then(onMIDISuccess, onMIDIFailure);
+
+} else { // no MIDI support
+
+    alert("No MIDI support in your browser.");
+
+}
+
+function onMIDISuccess(midiAccess) {
+    // when we get a succesful response, run this code
+    midi = midiAccess; // this is our raw MIDI data, inputs, outputs, and sysex status
+
+    var inputs = midi.inputs.values();
+    // loop over all available inputs and listen for any MIDI input
+    for (var input = inputs.next(); input && !input.done; input = inputs.next()) {
+
+        // each time there is a midi message call the onMIDIMessage function
+        input.value.onmidimessage = onMIDIMessage;
+    }
+
+}
+
+function onMIDIMessage(message) {
+    data = message.data;
+    console.log('MIDI data', data);
+}
+
+function onMIDIFailure(error) {
+    // when we get a failed response, run this code
+    console.log("No access to MIDI devices or your browser doesn't support WebMIDI API. Please use WebMIDIAPIShim " + error);
+}
 
 
 

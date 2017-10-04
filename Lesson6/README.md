@@ -2,51 +2,28 @@
 
 Actually know what MIDI is! And how we harness that in a browser. Plug in a MIDI instrument or controller and trigger events to play when you press buttons!
 
-Work in [index.html](index.html). The file is set up with some existing code and a button to help you get started.
+Work in [index.html](index.html). The file is set up with some existing code to help you get started.
 
 ## Tasks
 
-1. Set our sound source
+#### There's a few functions already in the file - let's have a quick look over them
 
-   `const soundSource = context.createPanner();`
+1. Requesting MIDI access: We're firstly checking here if Web MIDI is supported by testing the `requestMIDIAccess` method of the navigator object.
+   
+   If it is, we call it - if not we alert the user there is no MIDI support available.
 
-2. Set our listener source
+   We set some params when we call `requestMIDIAccess` - in this case `sysex: false` which means we don't want to talk back to the device. The method returns a promise.
 
-   `const listener = context.listener;`
+2. `onMIDISuccess` function: Our raw MIDI data gets passed to this function. We want to listen for all MIDI input messages and when there is one call the `onMIDIMessage` function.
 
-3. Set the position of both the sound & the listener in 3D space
+3. `onMIDIMessage` logs the data we receive in the browser to the console... So plug in a MIDI controller, open the HTML file & console and watch as data is logged when you press buttons and turn dials :D
 
-```javascript
-  listener.setPosition(0, 0, 5);
-  soundSource.setPosition(0, 0, 5);
-```
+4. You have all the functions we wrote before to play when you receive a MIDI message. Test for certain values and trigger functions!
 
-4. Create out buffer source nodes with params
-
-```jaavscript
-  const music = context.createBufferSource();
-  music.buffer = audioBuffer;
-  music.loop = true;
-```
-
-5. Start music
-6. Change our source postion when we move our mouse
-
-```javascript
-   soundSource.setPosition((evt.clientX-startPosX)/10, (evt.clientY-startPosY)/10, (evt.clientY-startPosY)/10);
-```
-
-7. Move our span with our mouse
-
-```javascript
-   spaceSource.style.transform = 'translate('+(evt.clientX-startPosX)+'px, '+(evt.clientY-startPosY)+'px)';
-```
-
-8. When we release our mouse stop the music
 
 ## What you learnt!
 
 1. That MIDI isn't quite what you think it is :)
-2. How you get MIDI information in a browser, how to listen for events and easily use them in JavaScript to harness functionality what you want
+2. How you get MIDI information in a browser, how to listen for events and easily use them in JavaScript to harness functionality that you want
 3. Hopefully make some kind of synth with everything you've learnt!
  
