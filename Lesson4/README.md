@@ -36,7 +36,7 @@ Work in [index.html](index.html). The file is set up with some existing code and
 ```javascript
    snareFilter.type = "bandpass";
    snareFilter.frequency = 10000;
-   snareFilter.Q = 0.0001;
+   snareFilter.Q.value = 0.0001;
 ```
 
 6. We also create a gain node and drop the volume as before to create effect... lastly make sure the audio graph is connected and call the play snare function on button click
